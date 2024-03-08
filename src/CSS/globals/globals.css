@@ -1,0 +1,5 @@
+@import url(./components/testimport.css);
+
+:root {
+  --color-purple: #8d7f95;
+}
