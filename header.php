@@ -10,18 +10,18 @@
 
 <body>
   <header>
-    <nav>
+    <nav class="top-nav">
       <a class="top-nav-logo" href="<?php echo get_home_url() ?>">
 
         <?php $custom_logo_id = get_theme_mod('custom_logo');
         $logo = wp_get_attachment_image_src($custom_logo_id, 'full');
         if (has_custom_logo()) {
-          echo '<img src="' . esc_url($logo[0]) . '" width="90px" height="90px" alt="brighton rope logo">';
+          echo '<img src="' . esc_url($logo[0]) . '" width="70px" height="70px" alt="brighton rope logo">';
         } else {
           echo '<h1>' . get_bloginfo('name') . '</h1>';
         } ?>
 
       </a>
-      <?php wp_nav_menu(array('theme_location' => 'top-nav', 'container' => '')); ?>
+      <?php wp_nav_menu(array('theme_location' => 'top-nav', 'container' => '', 'menu_id' => 'top-nav-menu')); ?>
     </nav>
   </header>

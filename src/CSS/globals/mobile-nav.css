@@ -1,0 +1,5 @@
+/* this stylesheet will only be loaded on mobile devices */
+
+header {
+  background-color: var(--color-purple);
+}

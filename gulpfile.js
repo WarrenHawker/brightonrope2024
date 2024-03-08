@@ -23,6 +23,21 @@ function bundleGlobalCSS() {
     .pipe(gulp.dest('build/CSS'));
 }
 
+function bundleMobileNavCSS() {
+  return gulp
+    .src('src/CSS/globals/mobile-nav.css')
+    .pipe(cssimport())
+    .pipe(postcss([require('autoprefixer')]))
+    .pipe(cssmin())
+    .pipe(
+      purgecss({
+        content: ['src/**/*.js', '**/*.php', '**/*.css'],
+      })
+    )
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(gulp.dest('build/CSS'));
+}
+
 function bundleModuleCSS() {
   return gulp
     .src('src/CSS/modules/*.css')
@@ -48,6 +63,10 @@ function minifyJS() {
 }
 
 exports.minifyJS = minifyJS;
-exports.watchCSS_JS = watchCSS_JS;
 
-exports.build = gulp.series(bundleGlobalCSS, bundleModuleCSS, minifyJS);
+exports.build = gulp.series(
+  bundleGlobalCSS,
+  bundleModuleCSS,
+  bundleMobileNavCSS,
+  minifyJS
+);

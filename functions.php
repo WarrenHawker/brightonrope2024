@@ -55,18 +55,24 @@ add_action('init', 'register_teacher_post_type');
 /* 
 Enqueues global styles and scripts for all pages
 
-If in development (based on URL), the files are enqueued from the "src" folder.
+If in development (based on URL - brighton-rope-2024.local), the files are enqueued from the "src" folder.
 
-If in production (based on URL), the files are enqueued from the "build" folder.
+If in production (based on URL - NOT brighton-rope-2024.local), the files are enqueued from the "build" folder.
+
+Mobile nav styles are only loaded on screen width less than 600
 */
 function global_styles_and_scripts()
 {
+  wp_enqueue_style('open-sans-font', '//fonts.googleapis.com/css?family=Open+Sans');
+  wp_enqueue_script('font-awesome-kit', 'https://kit.fontawesome.com/0de87d0496.js', array(), '5.15.4', true);
   if ($_SERVER['HTTP_HOST'] === 'brighton-rope-2024.local') {
     wp_enqueue_style("global_styles", get_template_directory_uri() . '/src/CSS/globals/globals.css', array(), '1.0', 'all');
     wp_enqueue_script('custom-script', get_template_directory_uri() . '/src/JS/index.js', array(), '1.0', true);
+    wp_enqueue_style("mobile_nav_styles", get_template_directory_uri() . '/src/CSS/globals/mobile-nav.css', array(), '1.0', 'screen and (max-width: 600px)');
   } else {
-    wp_enqueue_style("global_styles", get_template_directory_uri() . '/build/CSS/globals.css', array(), '1.0', 'all');
+    wp_enqueue_style("global_styles", get_template_directory_uri() . '/build/CSS/globals.min.css', array(), '1.0', 'all');
     wp_enqueue_script('custom-script', get_template_directory_uri() . '/build/JS/index.min.js', array(), '1.0', true);
+    wp_enqueue_style("mobile_nav_styles", get_template_directory_uri() . '/build/CSS/mobile-nav.min.css', array(), '1.0', 'screen and (max-width: 600px)');
   }
 }
 add_action('wp_enqueue_scripts', 'global_styles_and_scripts');
@@ -87,3 +93,9 @@ function themename_custom_logo_setup()
   add_theme_support('custom-logo', $defaults);
 }
 add_action('after_setup_theme', 'themename_custom_logo_setup');
+
+//register custom blocks
+function register_custom_blocks()
+{
+}
+add_action('init', 'register_custom_blocks');

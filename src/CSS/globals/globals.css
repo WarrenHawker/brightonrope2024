@@ -1,5 +1,22 @@
-@import url(./components/testimport.css);
+/* import component files */
+@import url(./components/header.css);
 
+/* global variables */
 :root {
   --color-purple: #8d7f95;
+  --color-gold: rgb(255, 215, 0);
+  --box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+/* resets */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'open sans';
 }
