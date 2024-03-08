@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "gulp build"
+    "build": "gulp build",
+    "build-block": "wp-scripts build",
+    "watch-block": "wp-scripts start"
   },
   "keywords": [],
   "author": "",
@@ -12,6 +14,7 @@
   "devDependencies": {
     "autoprefixer": "^10.4.18",
     "gulp": "^4.0.2",
+    "gulp-cssimport": "^7.0.0",
     "gulp-cssmin": "^0.2.0",
     "gulp-postcss": "^10.0.0",
     "gulp-purgecss": "^5.0.0",
@@ -21,6 +24,7 @@
     "gulp-uglify": "^3.0.2"
   },
   "dependencies": {
-    "gulp-cssimport": "^7.0.0"
+    "@wordpress/create-block": "^4.37.0",
+    "@wordpress/scripts": "^27.4.0"
   }
 }

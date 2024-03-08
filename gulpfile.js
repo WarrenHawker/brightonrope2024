@@ -7,6 +7,15 @@ const cssmin = require('gulp-cssmin');
 const removeLogging = require('gulp-remove-logging');
 const stripComments = require('gulp-strip-comments');
 const cssimport = require('gulp-cssimport');
+const { exec } = require('child_process');
+
+function buildCustomBlocks(cb) {
+  exec('wp-scripts build', (err, stdout, stderr) => {
+    console.log(stdout);
+    console.error(stderr);
+    cb(err);
+  });
+}
 
 function bundleGlobalCSS() {
   return gulp
@@ -65,6 +74,7 @@ function minifyJS() {
 exports.minifyJS = minifyJS;
 
 exports.build = gulp.series(
+  buildCustomBlocks,
   bundleGlobalCSS,
   bundleModuleCSS,
   bundleMobileNavCSS,

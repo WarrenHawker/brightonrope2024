@@ -66,13 +66,13 @@ function global_styles_and_scripts()
   wp_enqueue_style('open-sans-font', '//fonts.googleapis.com/css?family=Open+Sans');
   wp_enqueue_script('font-awesome-kit', 'https://kit.fontawesome.com/0de87d0496.js', array(), '5.15.4', true);
   if ($_SERVER['HTTP_HOST'] === 'brighton-rope-2024.local') {
-    wp_enqueue_style("global_styles", get_template_directory_uri() . '/src/CSS/globals/globals.css', array(), '1.0', 'all');
-    wp_enqueue_script('custom-script', get_template_directory_uri() . '/src/JS/index.js', array(), '1.0', true);
-    wp_enqueue_style("mobile_nav_styles", get_template_directory_uri() . '/src/CSS/globals/mobile-nav.css', array(), '1.0', 'screen and (max-width: 600px)');
+    wp_enqueue_style("brightonrope_global_styles", get_template_directory_uri() . '/src/CSS/globals/globals.css', array(), '1.0', 'all');
+    wp_enqueue_script('brightonrope_global_scripts', get_template_directory_uri() . '/src/JS/index.js', array(), '1.0', true);
+    wp_enqueue_style("brightonrope_mobile_nav_styles", get_template_directory_uri() . '/src/CSS/globals/mobile-nav.css', array(), '1.0', 'screen and (max-width: 600px)');
   } else {
-    wp_enqueue_style("global_styles", get_template_directory_uri() . '/build/CSS/globals.min.css', array(), '1.0', 'all');
-    wp_enqueue_script('custom-script', get_template_directory_uri() . '/build/JS/index.min.js', array(), '1.0', true);
-    wp_enqueue_style("mobile_nav_styles", get_template_directory_uri() . '/build/CSS/mobile-nav.min.css', array(), '1.0', 'screen and (max-width: 600px)');
+    wp_enqueue_style("brightonrope_global_styles", get_template_directory_uri() . '/build/CSS/globals.min.css', array(), '1.0', 'all');
+    wp_enqueue_script('brightonrope_global_scripts', get_template_directory_uri() . '/build/JS/index.min.js', array(), '1.0', true);
+    wp_enqueue_style("brightonrope_mobile_nav_styles", get_template_directory_uri() . '/build/CSS/mobile-nav.min.css', array(), '1.0', 'screen and (max-width: 600px)');
   }
 }
 add_action('wp_enqueue_scripts', 'global_styles_and_scripts');
@@ -97,5 +97,6 @@ add_action('after_setup_theme', 'themename_custom_logo_setup');
 //register custom blocks
 function register_custom_blocks()
 {
+  register_block_type(get_template_directory() . '/build/blocks/test-block');
 }
 add_action('init', 'register_custom_blocks');
