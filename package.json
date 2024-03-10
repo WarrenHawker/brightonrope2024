@@ -6,7 +6,7 @@
   "scripts": {
     "build": "gulp build",
     "build-block": "wp-scripts build",
-    "watch-block": "wp-scripts start"
+    "start": "wp-scripts start"
   },
   "keywords": [],
   "author": "",
@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "@wordpress/create-block": "^4.37.0",
+    "@wordpress/media-utils": "^4.44.0",
     "@wordpress/scripts": "^27.4.0"
   }
 }

@@ -1,0 +1,17 @@
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.hero-banner-preview {
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 300px;
+}
+
+.hero-banner-inner-preview {
+	height: 100%;
+	backdrop-filter: blur(5px);
+}

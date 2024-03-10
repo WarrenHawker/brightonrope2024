@@ -1,0 +1,41 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "brighton-rope/hero-banner",
+  "version": "0.1.0",
+  "title": "Brighton Rope Hero Banner",
+  "category": "widgets",
+  "icon": "cover-image",
+  "description": "Custom hero banner block for Brighton Rope theme",
+  "textdomain": "brighton-rope-hero-banner",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "attributes": {
+    "backgroundImage": {
+      "type": "string"
+    }
+  },
+  "supports": {
+    "align": [
+      "wide",
+      "full"
+    ],
+    "multiple": true,
+    "innerBlocks": true,
+    "anchor": true,
+    "color": {
+      "background": true,
+      "text": true,
+      "link": true
+    },
+    "typography": {
+      "fontSize": true
+    },
+    "spacing": {
+      "margin": true,
+      "padding": true,
+      "blockGap": true
+    }
+  }
+}

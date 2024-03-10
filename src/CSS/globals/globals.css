@@ -20,9 +20,3 @@ body {
   margin: 0;
   font-family: 'open sans';
 }
-
-.hero-banner {
-  background-size: 'contain';
-  background-position: 'center';
-  height: 500px;
-}

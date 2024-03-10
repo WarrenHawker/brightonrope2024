@@ -78,25 +78,33 @@ function global_styles_and_scripts()
 add_action('wp_enqueue_scripts', 'global_styles_and_scripts');
 
 
-//add custom logo support to theme
-add_theme_support('custom-logo');
-function themename_custom_logo_setup()
+//add extra theme support - various things
+function theme_extra_supports()
 {
-  $defaults = array(
+  //post formats
+  add_theme_support('post-formats', array(
+    'aside', 'image', 'gallery', 'video', 'audio',
+    'link', 'quote', 'status'
+  ));
+
+  //custom logo
+  add_theme_support('custom-logo', array(
     'height'               => 100,
     'width'                => 400,
     'flex-height'          => true,
     'flex-width'           => true,
     'header-text'          => array('site-title', 'site-description'),
     'unlink-homepage-logo' => true,
-  );
-  add_theme_support('custom-logo', $defaults);
+  ));
+
+  add_theme_support('custom-line-height');
 }
-add_action('after_setup_theme', 'themename_custom_logo_setup');
+add_action('after_setup_theme', 'theme_extra_supports', 20);
 
 //register custom blocks
 function register_custom_blocks()
 {
   register_block_type(get_template_directory() . '/build/blocks/test-block');
+  register_block_type(get_template_directory() . '/build/blocks/hero-banner-block');
 }
 add_action('init', 'register_custom_blocks');
