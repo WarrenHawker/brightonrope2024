@@ -1,0 +1,23 @@
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.cta-button-block-preview .cta-button {
+	text-decoration: none;
+	border: 2px solid white;
+	padding: 0 5px;
+	margin: auto;
+	display: block;
+	width: max-content;
+	font-family: "open sans";
+}
+
+.cta-button-block-preview .cta-button:hover {
+	text-decoration: underline;
+}
+
+.block-editor-url-input__input {
+	width: 100% !important;
+}

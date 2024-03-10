@@ -15,7 +15,6 @@ import {
 	MediaUpload,
 	InnerBlocks,
 	useBlockProps,
-	MediaUploadCheck,
 } from "@wordpress/block-editor";
 
 import { Button } from "@wordpress/components";
@@ -49,17 +48,6 @@ const Edit = ({ attributes, setAttributes }) => {
 	const onSelectImage = (media) => {
 		setAttributes({ backgroundImage: media.url });
 	};
-
-	// const renderSelectedImage = (obj) => {
-	// 	return wp.element.createElement(
-	// 		wp.components.Button,
-	// 		{
-	// 			onClick: obj.open,
-	// 			className: "button button-large",
-	// 		},
-	// 		attributes.backgroundImage ? "Change Image" : "Upload Image",
-	// 	);
-	// };
 
 	return (
 		<div {...blockProps} style={previewStyle} className="hero-banner-preview">

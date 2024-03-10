@@ -1,6 +1,5 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
-  "apiVersion": 3,
   "name": "brighton-rope/hero-banner",
   "version": "0.1.0",
   "title": "Brighton Rope Hero Banner",

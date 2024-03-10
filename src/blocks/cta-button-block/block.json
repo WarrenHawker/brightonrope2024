@@ -1,0 +1,58 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"name": "brighton-rope/cta-button",
+	"version": "0.1.0",
+	"title": "Brighton Rope CTA Button",
+	"category": "widgets",
+	"icon": "button",
+	"description": "Custom Call-To-Action button for Brighton Rope theme",
+	"textdomain": "brighton-rope-cta-button",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"attributes": {
+		"text": { "type": "string", "default": "Call to Action Button" },
+		"url": { "type": "string" },
+		"textColor": {
+			"type": "string",
+			"default": "black"
+		},
+		"backgroundColor": {
+			"type": "string",
+			"default": "transparent"
+		},
+		"borderColor": {
+			"type": "string",
+			"default": "white"
+		},
+		"openInNewTab": {
+			"type": "boolean",
+			"default": false
+		},
+		"textSize": {
+			"type": "string",
+			"default": "40px"
+		},
+		"buttonPadding": {
+			"type": "string"
+		},
+		"buttonMargin": {
+			"type": "string"
+		}
+	},
+	"supports": {
+		"align": ["wide", "full"],
+		"multiple": true,
+		"innerBlocks": true,
+		"anchor": true,
+		"color": { "background": true, "text": true, "link": true },
+		"typography": {
+			"fontSize": true
+		},
+		"spacing": {
+			"margin": true,
+			"padding": true,
+			"blockGap": true
+		}
+	}
+}

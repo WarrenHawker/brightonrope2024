@@ -106,5 +106,6 @@ function register_custom_blocks()
 {
   register_block_type(get_template_directory() . '/build/blocks/test-block');
   register_block_type(get_template_directory() . '/build/blocks/hero-banner-block');
+  register_block_type(get_template_directory() . '/build/blocks/cta-button-block');
 }
 add_action('init', 'register_custom_blocks');
