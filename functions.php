@@ -104,8 +104,8 @@ add_action('after_setup_theme', 'theme_extra_supports', 20);
 //register custom blocks
 function register_custom_blocks()
 {
-  register_block_type(get_template_directory() . '/build/blocks/test-block');
   register_block_type(get_template_directory() . '/build/blocks/hero-banner-block');
   register_block_type(get_template_directory() . '/build/blocks/cta-button-block');
+  register_block_type(get_template_directory() . '/build/blocks/column-block');
 }
 add_action('init', 'register_custom_blocks');

@@ -20,3 +20,7 @@ body {
   margin: 0;
   font-family: 'open sans';
 }
+
+.wp-block-columns-is-layout-flex {
+  gap: 0 !important;
+}

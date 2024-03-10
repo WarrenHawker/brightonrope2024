@@ -18,33 +18,9 @@ import { InnerBlocks } from "@wordpress/block-editor";
  */
 const save = ({ attributes }) => {
 	const blockProps = useBlockProps.save();
-	const {
-		text,
-		url,
-		textColor,
-		backgroundColor,
-		borderColor,
-		openInNewTab,
-		textSize,
-	} = attributes;
-
-	const Styles = {
-		color: textColor,
-		backgroundColor: backgroundColor,
-		borderColor: borderColor,
-		fontSize: textSize,
-	};
 	return (
-		<div {...blockProps} className="cta-button-block">
-			<a
-				className="cta-button"
-				href={url}
-				style={Styles}
-				target={openInNewTab ? "_blank" : "_self"}
-				rel="noopener"
-			>
-				{text}
-			</a>
+		<div {...blockProps} className="brighton-rope-column">
+			<InnerBlocks.Content />
 		</div>
 	);
 };
