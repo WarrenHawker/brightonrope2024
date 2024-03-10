@@ -10,8 +10,7 @@
 	background-repeat: no-repeat;
 	height: 300px;
 	font-family: "open sans";
-}
-
-.hero-banner-inner {
-	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
 }

@@ -1,41 +1,21 @@
-/**
- * Retrieves the translation of text.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/
- */
+//Retrieves the translation of text.
 import { __ } from "@wordpress/i18n";
 
-/**
- * React hook that is used to mark the block wrapper element.
- * It provides all the necessary props like the class name.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
- */
+//package imports
 import {
 	MediaUpload,
 	InnerBlocks,
 	useBlockProps,
 } from "@wordpress/block-editor";
-
 import { Button } from "@wordpress/components";
-
-/**
- * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
- * Those files can contain any CSS code that gets applied to the editor.
- *
- * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
- */
 import "./editor.css";
 
-/**
- * The edit function describes the structure of your block in the context of the
- * editor. This represents what the editor will render when the block is used.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#edit
- *
- * @return {Element} Element to render.
- */
+/*
+Edit React Component 
 
+Runs all the code needed to display the custom block in the 
+Wordpress page edit screen
+*/
 const Edit = ({ attributes, setAttributes }) => {
 	const blockProps = useBlockProps();
 
@@ -51,25 +31,26 @@ const Edit = ({ attributes, setAttributes }) => {
 
 	return (
 		<div {...blockProps} style={previewStyle} className="hero-banner-preview">
-			<div className="hero-banner-inner-preview">
-				<MediaUpload
-					onSelect={onSelectImage}
-					allowedTypes={[
-						"image/gif",
-						"image/jpeg",
-						"image/png",
-						"image/svg+xml",
-						"image/webp",
-					]}
-					value={attributes.backgroundImage}
-					render={({ open }) => (
-						<Button className="button button-large" onClick={open}>
-							{attributes.backgroundImage ? "Change Image" : "Upload Image"}
-						</Button>
-					)}
-				/>
-				<InnerBlocks />
-			</div>
+			<MediaUpload
+				onSelect={onSelectImage}
+				allowedTypes={[
+					"image/gif",
+					"image/jpeg",
+					"image/png",
+					"image/svg+xml",
+					"image/webp",
+				]}
+				value={attributes.backgroundImage}
+				render={({ open }) => (
+					<Button
+						className="button button-large btn-change-image"
+						onClick={open}
+					>
+						{attributes.backgroundImage ? "Change Image" : "Upload Image"}
+					</Button>
+				)}
+			/>
+			<InnerBlocks />
 		</div>
 	);
 };

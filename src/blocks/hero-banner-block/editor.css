@@ -10,8 +10,25 @@
 	background-repeat: no-repeat;
 	height: 300px;
 	font-family: "open sans";
+	position: relative;
 }
 
-.hero-banner-inner-preview {
+.hero-banner-preview .block-editor-inner-blocks {
 	height: 100%;
+}
+
+.hero-banner-preview
+	.block-editor-inner-blocks
+	.block-editor-block-list__layout {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	height: 100%;
+}
+
+.btn-change-image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 100;
 }

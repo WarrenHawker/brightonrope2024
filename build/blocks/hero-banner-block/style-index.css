@@ -1,1 +1,1 @@
-.hero-banner{background-position:50%;background-repeat:no-repeat;background-size:cover;font-family:open sans;height:300px}.hero-banner-inner{height:100%}
+.hero-banner{background-position:50%;background-repeat:no-repeat;background-size:cover;display:flex;flex-direction:column;font-family:open sans;height:300px;justify-content:space-evenly}

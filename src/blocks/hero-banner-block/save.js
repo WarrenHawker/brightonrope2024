@@ -25,9 +25,7 @@ const save = ({ attributes }) => {
 	const blockProps = useBlockProps.save();
 	return (
 		<div {...blockProps} className="hero-banner" style={Style}>
-			<div className="hero-banner-inner">
-				<InnerBlocks.Content />
-			</div>
+			<InnerBlocks.Content />
 		</div>
 	);
 };
