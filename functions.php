@@ -81,6 +81,9 @@ add_action('wp_enqueue_scripts', 'global_styles_and_scripts');
 //add extra theme support - various things
 function theme_extra_supports()
 {
+  //widgets
+  add_theme_support('widgets');
+
   //post formats
   add_theme_support('post-formats', array(
     'aside', 'image', 'gallery', 'video', 'audio',
@@ -109,3 +112,31 @@ function register_custom_blocks()
   register_block_type(get_template_directory() . '/build/blocks/column-block');
 }
 add_action('init', 'register_custom_blocks');
+
+function brighton_rope_sidebars()
+{
+  register_sidebar(array(
+    'name'          => 'Footer Section One',
+    'id'            => 'footer-section-one',
+    'description'   => 'Widgets added here will appear inside the first section of the footer',
+    'before_widget' => '',
+    'before_title' => '',
+  ));
+
+  register_sidebar(array(
+    'name'          => 'Footer Section Two',
+    'id'            => 'footer-section-two',
+    'description'   => 'Widgets added here will appear inside the second section of the footer',
+    'before_widget' => '',
+    'before_title' => '',
+  ));
+
+  register_sidebar(array(
+    'name'          => 'Footer Section Three',
+    'id'            => 'footer-section-three',
+    'description'   => 'Widgets added here will appear inside the third section of the footer',
+    'before_widget' => '',
+    'before_title'  => '',
+  ));
+};
+add_action('widgets_init', 'brighton_rope_sidebars');
