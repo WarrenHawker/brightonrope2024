@@ -1,5 +1,21 @@
 <?php
 
+//Load files from other places in the theme
+$psIncludes = array(
+  'acf-register-fields/main.php',
+);
+
+foreach ($psIncludes as $file) {
+  if (!$filepath = locate_template($file)) {
+
+    trigger_error(sprintf(__('Error locating %s for inclusion', 'ps'), $file), E_USER_ERROR);
+  }
+
+  require_once $filepath;
+}
+
+unset($file, $filepath);
+
 //register top nav menu
 function register_top_nav_menu()
 {
@@ -110,6 +126,7 @@ function register_custom_blocks()
   register_block_type(get_template_directory() . '/build/blocks/hero-banner-block');
   register_block_type(get_template_directory() . '/build/blocks/cta-button-block');
   register_block_type(get_template_directory() . '/build/blocks/column-block');
+  register_block_type(get_template_directory() . '/build/blocks/teacher-display-block');
 }
 add_action('init', 'register_custom_blocks');
 
