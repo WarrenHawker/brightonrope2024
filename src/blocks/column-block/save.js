@@ -18,8 +18,13 @@ import { InnerBlocks } from "@wordpress/block-editor";
  */
 const save = ({ attributes }) => {
 	const blockProps = useBlockProps.save();
+	const { maxWidth } = attributes;
+
+	const Styles = {
+		maxWidth: maxWidth,
+	};
 	return (
-		<div {...blockProps} className="brighton-rope-column">
+		<div {...blockProps} className="brighton-rope-column" style={Styles}>
 			<InnerBlocks.Content />
 		</div>
 	);
