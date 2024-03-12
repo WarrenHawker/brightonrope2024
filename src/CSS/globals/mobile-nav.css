@@ -1,7 +1,8 @@
 .top-nav {
   flex-direction: row-reverse;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding: 0 1em;
 }
 
 .mobile-nav {
@@ -95,15 +96,13 @@
   padding: 6.5em 2.2em 2em;
   background: var(--color-purple);
   -webkit-font-smoothing: antialiased;
-  transform-origin: 0% 0%;
-  transform: translate(-100%, 0);
   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
-  top: 50px;
-  left: -100px;
+  transform: translateX(-400px);
   align-items: flex-start !important;
 }
 
 #menuToggle input:checked ~ ul {
+  transform: translateX(0);
   transform: none;
 }
 
@@ -115,7 +114,6 @@
 ul#top-nav-menu ul.sub-menu {
   position: unset;
   box-shadow: none;
-  /* margin-left: 1em; */
 }
 
 ul#top-nav-menu ul.sub-menu li {
