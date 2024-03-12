@@ -65,3 +65,7 @@ ul#top-nav-menu li.menu-item-has-children:hover > ul.sub-menu li {
   display: block;
   padding: 0.5em;
 }
+
+#menuToggle input {
+  display: none;
+}

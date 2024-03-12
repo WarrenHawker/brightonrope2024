@@ -8,7 +8,9 @@
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
-	height: 300px;
+	height: auto;
+	min-height: 200px;
+	padding: 1em;
 	font-family: "open sans";
 	display: flex;
 	flex-direction: column;

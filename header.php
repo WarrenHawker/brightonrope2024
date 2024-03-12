@@ -12,7 +12,6 @@
   <header>
     <nav class="top-nav">
       <a class="top-nav-logo" href="<?php echo get_home_url() ?>">
-
         <?php $custom_logo_id = get_theme_mod('custom_logo');
         $logo = wp_get_attachment_image_src($custom_logo_id, 'full');
         if (has_custom_logo()) {
@@ -22,6 +21,12 @@
         } ?>
 
       </a>
-      <?php wp_nav_menu(array('theme_location' => 'top-nav', 'container' => '', 'menu_id' => 'top-nav-menu')); ?>
+      <div id="menuToggle">
+        <input type="checkbox" />
+        <span></span>
+        <span></span>
+        <span></span>
+        <?php wp_nav_menu(array('theme_location' => 'top-nav', 'container' => '', 'menu_id' => 'top-nav-menu')); ?>
+      </div>
     </nav>
   </header>

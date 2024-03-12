@@ -1,3 +1,3 @@
-.hero-banner-preview{background-position:50%;background-repeat:no-repeat;background-size:cover;font-family:open sans;height:300px;position:relative}.hero-banner-preview .block-editor-inner-blocks{height:100%}.hero-banner-preview
+.hero-banner-preview{background-position:50%;background-repeat:no-repeat;background-size:cover;font-family:open sans;height:auto;min-height:200px;padding:1em;position:relative}.hero-banner-preview .block-editor-inner-blocks{height:100%}.hero-banner-preview
 	.block-editor-inner-blocks
 	.block-editor-block-list__layout{display:flex;flex-direction:column;height:100%;justify-content:space-evenly}.btn-change-image{left:0;position:absolute;top:0;z-index:100}

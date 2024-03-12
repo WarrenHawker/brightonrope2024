@@ -37,6 +37,11 @@ footer ul.menu {
   text-decoration: underline;
 }
 
+.footer-section-one {
+  display: flex;
+  justify-content: center;
+}
+
 .wp-social-link a svg {
   font-size: 40px;
 }
