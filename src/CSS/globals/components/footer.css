@@ -42,7 +42,7 @@ footer ul.menu {
 }
 
 .wp-social-link a[href*='fetlife.com'] {
-  background-image: url(../../../../assets/FetlifeLogo.png);
+  background-image: url(../../../../assets/FetlifeLogo.webp);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;

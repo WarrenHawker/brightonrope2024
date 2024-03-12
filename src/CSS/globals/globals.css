@@ -20,6 +20,23 @@
 body {
   margin: 0;
   font-family: 'open sans';
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header,
+footer {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: auto;
+  width: 100%;
+}
+
+main {
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: auto;
 }
 
 .wp-block-columns-is-layout-flex {

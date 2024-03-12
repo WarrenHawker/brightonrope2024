@@ -8,6 +8,7 @@ const removeLogging = require('gulp-remove-logging');
 const stripComments = require('gulp-strip-comments');
 const cssimport = require('gulp-cssimport');
 const { exec } = require('child_process');
+const replace = require('gulp-replace');
 
 function buildCustomBlocks(cb) {
   exec('wp-scripts build', (err, stdout, stderr) => {
@@ -26,7 +27,14 @@ function bundleGlobalCSS() {
     .pipe(
       purgecss({
         content: ['src/**/*.js', '**/*.php', '**/*.css'],
+        safelist: { deep: [/wp-social-link$/] },
       })
+    )
+    .pipe(
+      replace(
+        '../../../../assets/FetlifeLogo.webp',
+        '../../assets/FetlifeLogo.webp'
+      )
     )
     .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest('build/CSS'));
